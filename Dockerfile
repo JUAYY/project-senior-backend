@@ -10,8 +10,14 @@ COPY package*.json ./
 # Install application dependencies
 RUN npm install
 
+# Install Prisma globally
+RUN npm install -g prisma
+
 # Copy the rest of the application source code to the container
 COPY . .
+
+# Generate Prisma client
+RUN prisma generate
 
 # Expose a port (if your application listens on a specific port)
 EXPOSE 8080
