@@ -13,7 +13,7 @@ steps:
       - "deploy"
       - "${_SERVICE_NAME}"
       - "--image"
-      - "${_IMAGE_NAME}"
+      - "${_IMAGE_NAME}:$COMMIT_SHA"
       - "--region"
       - "${_REGION}"
 images:
