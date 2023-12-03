@@ -20,6 +20,7 @@ const uploadToCloud = async (file) => {
   const config = {
     metadata: { contentType: file.mimetype },
     resumable: false,
+    origin: "*",
   };
   // Create a write stream to pipe the file data to GCS
   const url = `https://storage.googleapis.com/${bucketName}/img/${filename}`;
